@@ -1,9 +1,9 @@
-<div class="col-md-12">
+
     <div class="col-md-12">
         <div class="meetup">
             <%= link_to("Edit", edit_meetup_path(@meetup), class: "btn btn-primary pull-right")%>
         </div>
         <h2><%= @meetup.title %></h2>
         <p><%= @meetup.description %></p>
+        <%= @meetup.comments_count %>
     </div>
-</div>
