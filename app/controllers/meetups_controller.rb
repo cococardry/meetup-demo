@@ -1,2 +1,36 @@
 class MeetupsController < ApplicationController
+  def index
+    @meetups=Meetup.all
+  end
+
+  def new
+    @meetup=Meetup.new
+  end
+
+  def create
+    @meetup=Meetup.new(meetup_params)
+    if @meetup.save
+      redirect_to meetups_path
+    else
+      render :new
+    end
+  end
+
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
+private
+  def meetup_params
+    params.require(:meetup).permit(:title,:description)
+  end
+
 end
